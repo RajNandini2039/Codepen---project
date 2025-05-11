@@ -1,0 +1,19 @@
+.gutter {
+  background-color: #2d2d2d;
+  background-clip: padding-box;
+}
+
+.gutter.gutter-horizontal {
+  cursor: col-resize;
+  width: 10px;
+}
+
+.gutter.gutter-vertical {
+  cursor: row-resize;
+  height: 10px;
+}
+/* NewProject.css */
+.code-editor-container {
+  overflow-y: auto;
+  max-height: 300px;
+}

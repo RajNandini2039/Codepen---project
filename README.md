@@ -3,6 +3,17 @@
 please direct login with google and after login you can all the projects that we are saved in hone ...and you can go to new project and write anything in html,css and javascript and save it and you can see your project in full screen ....after back you can see you project in the home where you can edit the title of your project or del project
 
 
+
+Technologies Used
+React: Frontend JavaScript library for building the user interface.
+Redux Toolkit: State management tool for managing the application's global state.
+Firebase Authentication: To handle user sign-up, login, and session management.
+CodeMirror : for html css and javascript
+Tailwind CSS: For styling and responsive design.
+React Icons: Used to display icons throughout the application.
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

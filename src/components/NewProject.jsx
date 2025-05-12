@@ -306,7 +306,7 @@ useEffect(() => {
   <iframe
     title="Result"
     srcDoc={output}
-    sandbox="allow-scripts"
+   
     style={{
       border: "none",
       width: "100%",
@@ -315,10 +315,6 @@ useEffect(() => {
       overflow: "auto",
     }}
   />
-
-
-
-
 
 
 

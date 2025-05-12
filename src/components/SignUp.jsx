@@ -87,6 +87,7 @@ const SignUp = () => {
 
 
   const signInwithEmail = async () => {
+    // console.log(email,password);
     if (!email || !password) {
       setAlertColor("red");
       setMessage("Please fill in both fields.");
@@ -94,17 +95,20 @@ const SignUp = () => {
       return;
     }
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      // await signInWithEmailAndPassword(auth, email, password);
+      console.log(email,password);
+      const userCred =  await signInWithEmailAndPassword(auth, email, password);
       dispatch(setUser(userCred.user));
       localStorage.setItem("user",JSON.stringify(email));
       setEmail("");
       setPassword("");
       navigate("/home");
     } catch (error) {
-      setAlertColor("red");
-      setMessage("Login failed ❌");
-      setTimeout(() => setMessage(""), 2000);
-    }
+    console.error("Login failed", error.message); // For debugging
+    setAlertColor("red");
+    setMessage("Login failed ❌ " + error.message);
+    setTimeout(() => setMessage(""), 2000);
+  }
   };
  
 

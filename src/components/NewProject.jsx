@@ -13,6 +13,8 @@ import { useSelector } from "react-redux";
 import Alert from "../container/Alert";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../config/firebase.config";
+import { useDispatch } from "react-redux";
+import { setUser } from "../reducers/userReducer";
 
 const NewProject = () => {
   const [html, setHtml] = useState("");
@@ -96,6 +98,14 @@ const NewProject = () => {
     console.log("Error saving document:", err);
   }
 };
+
+
+useEffect(() => {
+  const storedUser = JSON.parse(localStorage.getItem("user"));
+  if (storedUser) {
+    dispatch(setUser(storedUser));
+  }
+}, []);
 
 
   return (
@@ -264,19 +274,56 @@ const NewProject = () => {
         </Split>
 
         {/* Output */}
-        <div className="bg-white w-full h-full overflow">
+        {/* <div className="bg-white w-full h-full overflow">
           Output / Preview Section
-          <iframe
+         <iframe
   title="Result"
+  sandbox="allow-scripts"
   srcDoc={output}
   style={{
     border: "none",
     width: "100%",
     height: "100%",
   }}
-/>
+/> */}
+{/* Output */}
+{/* <div></> */}
+{/* Output */}
+<div className="output-container relative bg-white w-full h-full overflow-auto">
+  {/* Fullscreen Button */}
+  <button
+    onClick={() => {
+      const blob = new Blob([output], { type: "text/html" });
+      const url = URL.createObjectURL(blob);
+      window.open(url, "_blank");
+    }}
+    className="absolute top-2 right-4 bg-black text-white px-3 py-1 rounded-md text-sm z-10 hover:bg-gray-800 transition"
+  >
+    Fullscreen Preview
+  </button>
 
-        </div>
+  {/* Iframe */}
+  <iframe
+    title="Result"
+    srcDoc={output}
+    sandbox="allow-scripts"
+    style={{
+      border: "none",
+      width: "100%",
+      height: "100%",
+      minHeight: "100%",
+      overflow: "auto",
+    }}
+  />
+
+
+
+
+
+
+
+
+</div>
       </Split>
     </div>
   );

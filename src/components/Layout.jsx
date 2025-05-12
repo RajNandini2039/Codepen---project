@@ -143,7 +143,7 @@ import { FaSearchengin } from "react-icons/fa6";
 import { auth } from "../config/firebase.config.js";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useDispatch } from "react-redux";
-import  {setUser}  from "../action/Action";
+import  {setUser}  from "../reducers/userReducer";
 
 const Layout = () => {
   const [isSideMenu, setIsSideMenu] = useState(false);

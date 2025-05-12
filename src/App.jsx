@@ -56,7 +56,9 @@ function App() {
       </Route>
 
       {/* Route WITHOUT layout */}
-      <Route path="/newProject" element={<PrivateRoute><NewProject /></PrivateRoute>} /> {/* new full-page route */}
+      <Route path="/newProject" element={<PrivateRoute><NewProject /></PrivateRoute>} /> 
+      {/* new full-page route */}
+      
     </Routes>
   );
 }

@@ -1,6 +1,6 @@
 
 
-
+please direct login with google and after login you can all the projects that we are saved in hone ...and you can go to new project and write anything in html,css and javascript and save it and you can see your project in full screen ....after back you can see you project in the home where you can edit the title of your project or del project
 
 
 # React + Vite
